@@ -278,7 +278,7 @@ t_symbol *ps_buffer;
 
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
 
-int C74_EXPORT main(void)
+void ext_main(void *r)
 {
     t_class *c = class_new("liveGranul~", (method)liveGranul_new, (method)liveGranul_free, sizeof(t_liveGranul), (method)NULL, A_GIMME, 0L);
     
@@ -311,7 +311,7 @@ int C74_EXPORT main(void)
     
     post("liveGranul~ 64bit / Build CB %s %s",__DATE__,__TIME__);
     
-    return 0;
+//    return 0;
 }
 
 // Reception d'un bang, declenche un grain
