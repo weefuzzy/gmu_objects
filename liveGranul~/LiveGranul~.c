@@ -1612,7 +1612,7 @@ void liveGranul_perform64(t_liveGranul *x, t_object *dsp64, double **ins, long n
         t_xing[0] = savein;
         
         zero_outs(x,outs,N);
-        
+        if(!x->x_env_samples) goto exit;
         //&&&&&&&&&&&&&  Boucle DSP  &&&&&&&&&&&&&
         n = 0;
         j = N;
@@ -1640,7 +1640,7 @@ void liveGranul_perform64(t_liveGranul *x, t_object *dsp64, double **ins, long n
                 //t_bufchan = x->x_buf_nchan[t_bufnum];
                 
                 t_envsamples = x->x_env_samples[x->Venv[i]];
-                
+                if(!t_envsamples) goto next;
                 // pas d'increment en float
                 finc = x->Vtranspos[i];
                 
@@ -1787,8 +1787,8 @@ void liveGranul_perform64(t_liveGranul *x, t_object *dsp64, double **ins, long n
             
         } // fin for
         
-        
-        x->x_sigin = sigin;
+        exit:
+          x->x_sigin = sigin;
     
 }
 //***********************************************************************************//
