@@ -1,0 +1,24 @@
+{
+	"author" : "GMU",
+	"description" : "GMU Granular Toolkit",
+	"homepatcher" : "",
+	"max_version_min" : "7.0",
+	"name" : "GMU_Grains",
+	"os" : {
+		"macintosh" : {
+			"platform" : [ "ia32", "x64" ],
+			"min_version" : "10.7"
+		},
+		"windows" : {
+			"platform" : [ "ia32", "x64" ],
+			"min_version" : "10"
+		}
+	},
+	"package_extra" : {
+		"reverse_domain" : "org.gmu.gmem",
+		"copyright" : ""
+	},
+	"tags" : [ ],
+	"version" : "@GIT_VERSION_MAJ@",
+	"website" : ""
+}
